@@ -24,9 +24,9 @@ export default function ActivityCard({ activity }: Props) {
                         fontWeight: 'bold',
                         fontSize: 20
                     }}
-                    subheaderTypographyProps={
+                    subheader={
                         <>
-                            Hosted by{' '} <Link to={`/profiles/bob`}>Akifa</Link>
+                            Hosted by{' '} <Link to={`/profiles/akifa`}>Akifa</Link>
                         </>}
                 />
                 <Box display='flex' flexDirection='column' gap={2} mr={2}>
