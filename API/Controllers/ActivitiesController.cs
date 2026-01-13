@@ -4,14 +4,14 @@ using Application.Activities.DTOs;
 using Application.Activities.Queries;
 using Domain;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Persistence;
 
 namespace API.Controllers;
 
 public class ActivitiesController : BaseApiController
 {
+    
     [HttpGet]
 
     public async Task<ActionResult<List<Activity>>> GetActivities()
@@ -19,6 +19,7 @@ public class ActivitiesController : BaseApiController
 
         return await Mediator.Send(new GetActivityList.Query());
     }
+
 
     [HttpGet("{id}")]
 
