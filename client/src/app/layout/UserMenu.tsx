@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { Avatar, Box, Divider, ListItemIcon, ListItemText } from '@mui/material';
 import { useAccount } from '../../lib/hooks/useAccount';
 import { Link } from 'react-router';
-import { Add, Logout } from '@mui/icons-material';
+import { Add, CatchingPokemon, Logout, Person, Person2, Person2Outlined, Person3 } from '@mui/icons-material';
 
 export default function UserMenu() {
     const { currentUser, logoutUser } = useAccount();
@@ -29,7 +29,10 @@ export default function UserMenu() {
                 sx={{ fontSize: '1.1rem' }}
             >
                 <Box display='flex' alignItems='center' gap={2}>
-                    <Avatar />
+                    <Avatar 
+                        src={currentUser?.imageUrl}
+                        alt='current user image'
+                    />
                     {currentUser?.displayName}
                 </Box>
             </Button>
@@ -48,9 +51,9 @@ export default function UserMenu() {
                     </ListItemIcon>
                     <ListItemText>Create Activity</ListItemText>
                 </MenuItem>
-                <MenuItem component={Link} to='/profile' onClick={handleClose}>
+                <MenuItem component={Link} to={`/profiles/${currentUser?.id}`} onClick={handleClose}>
                     <ListItemIcon>
-                        <Add />
+                        <Person />
                     </ListItemIcon>
                     <ListItemText>My profile</ListItemText>
                 </MenuItem>
