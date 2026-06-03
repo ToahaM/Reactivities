@@ -12,7 +12,7 @@ export default function ProfileCard({ profile }: Props) {
             <Card
                 sx={{
                     borderRadius: 3, p: 3,
-                    maxWidth: 200,
+                    maxWidth: 250,
                     textDecoration: 'none'
                 }}
                 elevation={4}
