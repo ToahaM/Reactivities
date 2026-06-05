@@ -34,6 +34,7 @@ builder.Services.AddMediatR(x =>
    
    x.RegisterServicesFromAssemblyContaining<GetActivityList.Handler>();
    x.AddOpenBehavior(typeof(ValidationBehavior<,>));
+   x.LicenseKey = builder.Configuration["Licences:MediatR"];
 });
 builder.Services.AddScoped<IUserAccessor, UserAccessor>();
 builder.Services.AddScoped<IPhotoService, PhotoService>();
